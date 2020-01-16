@@ -1,8 +1,8 @@
 import math, os
 import base64 as b64
 from PIL import Image, ImageDraw 
-import random as rand
 
+#Author by Zpon. Andrey Ivanov.
 
 def encode():
 	path = input("Enter path of file: ")
@@ -90,6 +90,6 @@ if(r == "1"):
 elif(r == "2"):
 	decode()
 elif(r == "3"):
-	print("\n © Andrey Ivanov\nEmail: andreie5555@gmail.com\n15.01.2020")
+	print("\n © Andrey Ivanov\nEmail: andreie5555@gmail.com\n16.01.2020")
 else:
 	print("Error")
