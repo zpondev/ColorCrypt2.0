@@ -1,4 +1,4 @@
-import math, os
+import math, os, sys
 import base64 as b64
 from PIL import Image, ImageDraw 
 
@@ -25,8 +25,10 @@ def encode():
 	
 	wh = math.ceil(math.sqrt(math.ceil(len(l)/3)))
 
+
 	img = Image.new("RGB", (wh, wh))
 	draw = ImageDraw.Draw(img)
+
 
 	for x in range(img.size[0]):
 		for y in range(img.size[1]):
@@ -49,8 +51,12 @@ def decode():
 	if (path[-1:] == "\'" and path[:1] == "\'") or (path[-1:] == "\"" and path[:1] == "\""): path = path[1:-1]
 
 	l = []
-	img = Image.open(path)
-	pix = img.load()
+	try:
+		img = Image.open(path)
+		pix = img.load()
+	except:
+		print("Error.")
+		return
 
 	for x in range(img.size[0]):
 		for y in range(img.size[1]):
@@ -83,8 +89,12 @@ def decode():
 
 	print( "\nSuccess! File "+name+" are saved.")
 
+try:
+	r = input("1 - Encode file;\n2 - Decode file;\n3 - About author;\n-")
+except:
+	print("\nWrite Error.")
+	sys.exit()
 
-r = input("1 - Encode file;\n2 - Decode file;\n3 - About author;\n-")
 if(r == "1"):
 	encode()
 elif(r == "2"):
