@@ -1,7 +1,6 @@
 import math, os
 import base64 as b64
 from PIL import Image, ImageDraw 
-import random as rand
 
 #Author by Zpon. Andrey Ivanov.
 
